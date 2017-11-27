@@ -54,9 +54,9 @@
                     <br/>
                     <label for="horallegada"> Number of Rooms </label>
                     <br/>
-                    <input type="text" name="num_habitaciones" required pattern="[0-9]"/>
+                    <input type="number" name="num_habitaciones" required pattern="[0-9]"/>
                     <br/>
-                    <label for="password"> Hotel Street </label>
+                    <label for="Hotel_Stret"> Hotel Street </label>
                     <br/>
                     <input type="text" name="calle" required/>
                     <br/>

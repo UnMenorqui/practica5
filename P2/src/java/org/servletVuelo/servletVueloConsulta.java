@@ -65,8 +65,8 @@ public class servletVueloConsulta extends HttpServlet {
                     int resultLibres = consultaLibres(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("fecha")));
                     String resultado = "";
                     if(resultLibres < 0) resultado = "ERROR!";
-                    else if(resultLibres == 0) resultado = "No hay habitaciones libres!";
-                    else resultado = "El numero de plazas libres es: " + resultLibres;
+                    else if(resultLibres == 0) resultado = "There are no free seats!";
+                    else resultado = "The number of free places is: " + resultLibres;
                     out.println(resultado);
                 } catch (Exception ex) {
                     out.println("Exception: " + ex);

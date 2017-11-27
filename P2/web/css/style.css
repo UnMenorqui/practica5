@@ -8,6 +8,20 @@ body {
 	color: #666;
 }
 
+select {
+     background: transparent;
+     border: none;
+     font-size: 14px;
+     height: 30px;
+     padding: 5px;
+     width: 300px;
+     border: 1px solid #900;
+}
+
+select:focus{ 
+    outline: none;
+}
+
 /* Typography */
 h1#title {
 	font-family: 'Roboto Slab', serif;

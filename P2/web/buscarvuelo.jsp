@@ -45,6 +45,10 @@
         </ul>
             
             <div class="container">
+                <div class="login-box">
+                    <div class="box-header">
+                        <h2>Search Flight</h2>
+                    </div>
                 <%
                         Connection connection = null;
                             try {            
@@ -52,7 +56,7 @@
                                 Class.forName("org.sqlite.JDBC");               
 
                                 // create a database connection
-                                connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+                                connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
                                 Statement statement = connection.createStatement();
                                 statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
@@ -61,7 +65,7 @@
 
                                 ResultSet rs = statement.executeQuery("select distinct id_vuelo from vuelos");
                                 out.println("<h5>Selecciona el numero de vuelo: </h5>");
-                                out.println("<select name='id_vuelo'>");
+                                out.println("<select name=\"numero\">");
 
                                     out.println("<option value=todo_num></option>");
                                     while (rs.next()) {
@@ -77,7 +81,7 @@
 
                                 rs = statement.executeQuery("select distinct companyia from vuelos");
                                 out.println("<h5>Selecciona el nombre de la companyia aerea: </h5>");
-                                out.println("<select name='companyia'>");
+                                out.println("<select name=\"compania\">");
 
                                     out.println("<option value=todo_comp></option>");
                                     while (rs.next()) {
@@ -90,7 +94,7 @@
 
                                 rs = statement.executeQuery("select distinct origen from vuelos");
                                 out.println("<h5>Selecciona el nombre de la ciudad de origen: </h5>");
-                                out.println("<select name='origen'>");
+                                out.println("<select name=\"origen\">");
 
                                     out.println("<option value=todo_or></option>");
                                     while (rs.next()) {
@@ -103,14 +107,14 @@
 
                                 rs = statement.executeQuery("select distinct destino from vuelos");
                                 out.println("<h5>Selecciona el nombre de la ciudad de destino: </h5>");
-                                out.println("<select name='destino'>");
+                                out.println("<select name=\"destino\">");
 
                                     out.println("<option value=todo_des></option>");
                                     while (rs.next()) {
                                         out.println("<option value=" + rs.getString("destino") + ">" + rs.getString("destino") + "</option>");
                                     }
 
-                                out.println("</select>");
+                                out.println("</select><br/><br/>");
 
 
                             } catch (SQLException e) {
@@ -126,10 +130,10 @@
                                     System.err.println(e.getMessage());
                                 }
                             }
-                        %> 
+                        %>
+                        <button type="submit">Search Hotel</button>
+                </div>
             </div>
-            
-   
         </form>
         <% 
             try {

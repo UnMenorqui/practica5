@@ -44,15 +44,15 @@ public class altavuelo extends HttpServlet {
               
           
           // create a database connection
-          //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db");
+          connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db");
           //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/practica 2/p2.db"); //Mac Aleix
-          connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+          //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
           Statement statement = connection.createStatement();
           statement.setQueryTimeout(30);  // set timeout to 30 sec.
           
           
           String numerovuelo = request.getParameter("numero");
-          String compania = request.getParameter("compañia");
+          String compania = request.getParameter("companyia");
           String origen = request.getParameter("origen");
           String horasalida = request.getParameter("horasalida");
           String destino = request.getParameter("destino");

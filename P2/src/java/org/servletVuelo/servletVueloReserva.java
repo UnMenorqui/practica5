@@ -72,8 +72,8 @@ public class servletVueloReserva extends HttpServlet {
             try {
                     int result = reservaPlaza(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("fecha")));
                     String resultado ="";
-                    if(result < 0) resultado ="-1";
-                    else resultado ="El numero de plazas ocupadas es:"+ result;
+                    if(result < 0) resultado ="ERROR";
+                    else resultado ="The number of places occupied is: "+ result;
                     out.println(resultado);
                 } catch (Exception ex) {
                     out.println("Exception: " + ex);

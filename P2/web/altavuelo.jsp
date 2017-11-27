@@ -46,7 +46,7 @@
                     <br/>
                     <label for="compañia"> Company </label>
                     <br/>
-                    <input type="text" name="compania" required/>
+                    <input type="text" name="companyia" required/>
                     <br/>
                     <label for="origen"> Origin </label>
                     <br/>

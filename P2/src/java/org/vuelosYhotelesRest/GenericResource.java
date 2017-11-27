@@ -75,8 +75,8 @@ public class GenericResource {
             Class.forName("org.sqlite.JDBC");
 
             // create a database connection
-            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
-            connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+            connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             
@@ -113,9 +113,9 @@ public class GenericResource {
             }
         }
         String resultado="";
-        if(hab_libres < 0) resultado =  "Ha habido un error!";
-        else if(hab_libres == 0)resultado =  "No hay habitaciones libres!";
-        else resultado =  "El numero de habitaciones libres es de: "+ hab_libres;
+        if(hab_libres < 0) resultado =  "ERROR!";
+        else if(hab_libres == 0)resultado =  "There are no free rooms!";
+        else resultado =  "The number of free rooms is: "+ hab_libres;
         return resultado;
     }
     
@@ -139,8 +139,8 @@ public class GenericResource {
             Class.forName("org.sqlite.JDBC");
 
             // create a database connection
-            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
-            connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+            connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             
@@ -187,8 +187,8 @@ public class GenericResource {
             }
         }
         String resultado= "";
-        if(hab_ocupadas < 0) resultado= "-1";
-        else resultado= "El numero de habiatciones ocupadas despues de la reserva es:"+hab_ocupadas;
+        if(hab_ocupadas < 0) resultado= "ERROR";
+        else resultado= "The number of rooms occupied is: "+hab_ocupadas; 
         return resultado;
     }
     
@@ -212,8 +212,8 @@ public class GenericResource {
             Class.forName("org.sqlite.JDBC");
 
             // create a database connection
-            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
-            connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+            connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             
@@ -251,7 +251,7 @@ public class GenericResource {
         }
         String resultado = "";
         if(plazas_libres < 0) resultado = "ERROR!";
-        else if(plazas_libres == 0) resultado = "No hay habitaciones libres!";
+        else if(plazas_libres == 0) resultado = "There are no free seats!";
         else resultado = resultado;
         return resultado;
     }
@@ -276,8 +276,8 @@ public class GenericResource {
             Class.forName("org.sqlite.JDBC");
 
             // create a database connection
-            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
-            connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+            connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
             Statement statement = connection.createStatement();
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
@@ -325,8 +325,8 @@ public class GenericResource {
             }
         }
         String resultado ="";
-        if(plazas_ocupadas < 0) resultado ="-1";
-        else resultado ="El numero de plazas ocupadas es:"+ plazas_ocupadas;
+        if(plazas_ocupadas < 0) resultado ="ERROR";
+        else resultado ="The number of places occupied is: "+ plazas_ocupadas;
                     return resultado;
     }
     

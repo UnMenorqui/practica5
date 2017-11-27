@@ -52,7 +52,7 @@
                         <br/>
                         <input type="text" name="fecha" placeholder="aaaammdd"/>
                         <br/>
-                        <button type="submit">Reserve Room</button>
+                        <button type="submit">Check</button>
                     </form>
                 </div>
                 <div id="Con Soap" class="tabcontent">
@@ -65,7 +65,7 @@
                         <br/>
                         <input type="text" name="fecha" placeholder="aaaammdd"/>
                         <br/>
-                        <button type="submit">Reserve Room</button>
+                        <button type="submit">Check</button>
                     </form>
                 </div>
             </div>

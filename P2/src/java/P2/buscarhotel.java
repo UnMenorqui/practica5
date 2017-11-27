@@ -48,38 +48,34 @@ public class buscarhotel extends HttpServlet {
           
           // create a database connection
           //connection = DriverManager.getConnection("jdbc:sqlite:F:\\AD\\Pràctica 2\\BD\\exemple.db");
-          //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
-          connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+          connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+          //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
           Statement statement = connection.createStatement();
           statement.setQueryTimeout(30);  // set timeout to 30 sec.
           
           
-          //String id_hotel = request.getParameter("id_hotel");
-          String nombrehotel = request.getParameter("nombrehotel");
-          System.out.println("Nombrehotel: " +nombrehotel);
-          String cadenahotelera = request.getParameter("cadenahotelera");
-          //String calle = request.getParameter("calle");
-          //String numero = request.getParameter("numero");
-          //String codigopostal = request.getParameter("codigopostal");
+          String nombrehotel = request.getParameter("nom_hotel");
+          String cadenahotelera = request.getParameter("cadena");
           String ciudad = request.getParameter("ciudad");
-          //String provincia = request.getParameter("provincia");
-          String pais = request.getParameter("pais");
-          //String num_habitaciones = request.getParameter("numerohabitaciones");
+          
+          System.out.println("nom_hotel:"+ nombrehotel);
+          System.out.println("cadena: "+cadenahotelera);
+          System.out.println("ciudad: "+ciudad);
           
           ResultSet rs; 
           
           
-          if (nombrehotel.equals("")) {
-              if (cadenahotelera.equals("")) {
-                  if (ciudad.equals("")) {
-                      rs = statement.executeQuery("Select * from hoteles"); //Buscar todo (parametros vacios)
+          if (nombrehotel.equals("todo_nom")) {
+              if (cadenahotelera.equals("todo_cad")) {
+                  if (ciudad.equals("todo_ciu")) {
+                      rs = statement.executeQuery("Select * from hoteles");
                   }
                   else {
                       rs = statement.executeQuery("Select * from hoteles where ciudad='"+ciudad+"'");
                   }
               }
               else {
-                  if (ciudad.equals("")) {
+                  if (ciudad.equals("todo_ciu")) {
                       rs = statement.executeQuery("Select * from hoteles where cadena='"+cadenahotelera+"'");
                   }
                   else {
@@ -88,8 +84,8 @@ public class buscarhotel extends HttpServlet {
               }
           }
           else {
-              if (cadenahotelera.equals("")) {
-                  if (ciudad.equals("")) {
+              if (cadenahotelera.equals("todo_cad")) {
+                  if (ciudad.equals("todo_ciu")) {
                       rs = statement.executeQuery("Select * from hoteles where nom_hotel='"+nombrehotel+"'");
                   }
                   else {
@@ -97,7 +93,7 @@ public class buscarhotel extends HttpServlet {
                   }
               }
               else {
-                  if (ciudad.equals("")) {
+                  if (ciudad.equals("todo_ciu")) {
                       rs = statement.executeQuery("Select * from hoteles where nom_hotel='"+nombrehotel+"' and cadena='"+cadenahotelera+"'");
                   }
                   else {

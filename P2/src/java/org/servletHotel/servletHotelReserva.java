@@ -69,7 +69,7 @@ public class servletHotelReserva extends HttpServlet {
                     int result = reservaHabitacion(Integer.parseInt(request.getParameter("id")), Integer.parseInt(request.getParameter("fecha")));
                     String resultado= "";
                     if(result < 0) resultado= "-1";
-                    else resultado= "El numero de habiatciones ocupadas es: "+result;
+                    else resultado= "The number of rooms occupied is: "+result;
                     
                     out.println(resultado);
                 } catch (Exception ex) {

@@ -42,6 +42,10 @@
         </ul>
             
             <div class="container">
+                <div class="login-box">
+                    <div class="box-header">
+                        <h2>Search Hotel</h2>
+                    </div>
                 <%
                     Connection connection = null;
                         try {            
@@ -49,33 +53,25 @@
                             Class.forName("org.sqlite.JDBC");               
 
                             // create a database connection
-                            connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+                            connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+                            //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
                             Statement statement = connection.createStatement();
                             statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
                             //Desplegable nombre hotel
-
-
-
-
                             ResultSet rs = statement.executeQuery("select distinct nom_hotel from hoteles");
-                            out.println("<h5>Selecciona el nombre del hotel: </h5>");
-                            out.println("<select name='nom_hotel'>");
-
+                            out.println("<h5>Selecciona el nombre del hotel: </h5> ");
+                            out.println("<select name=\"nom_hotel\">");
                                 out.println("<option value=todo_nom></option>");
                                 while (rs.next()) {
                                     out.println("<option value='" + rs.getString("nom_hotel") + "'>" + rs.getString("nom_hotel") + "</option>");
                                 }
                             out.println("</select>");
-                            /*else{
-                                out.println("<option value='" + "No existe ningun hotel registrado" + "'>" + rs.getString("nom_hotel") + "</option>");
-                            }*/
 
                             //Desplegable cadena hotelera
-
                             rs = statement.executeQuery("select distinct cadena from hoteles");
                             out.println("<h5>Selecciona el nombre de la cadena hotelera: </h5>");
-                            out.println("<select name='cadena'>");
+                            out.println("<select name=\"cadena\">");
 
                                 out.println("<option value=todo_cad></option>");
                                 while (rs.next()) {
@@ -85,19 +81,15 @@
                             out.println("</select>");
 
                             //Desplegable ciudad
-
                             rs = statement.executeQuery("select distinct ciudad from hoteles");
                             out.println("<h5>Selecciona el nombre de la ciudad: </h5>");
-                            out.println("<select name='ciudad'>");
+                            out.println("<select name=\"ciudad\">");
 
                                 out.println("<option value=todo_ciu></option>");
                                 while (rs.next()) {
                                     out.println("<option value='" + rs.getString("ciudad") + "'>" + rs.getString("ciudad") + "</option>");
                                 }
-
-                            out.println("</select>");
-
-
+                            out.println("</select><br/><br/>");
                         } catch (SQLException e) {
                             System.err.println(e.getMessage());
                         } catch (ClassNotFoundException e) {
@@ -112,7 +104,9 @@
                             }
                         }
                     %>
-            </div>    
+                    <button type="submit">Search Hotel</button>
+                </div>
+            </div>
         </form>
         <% 
             try {

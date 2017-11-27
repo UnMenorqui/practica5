@@ -48,8 +48,8 @@ public class buscarvuelo extends HttpServlet {
           
           // create a database connection
           //connection = DriverManager.getConnection("jdbc:sqlite:F:\\AD\\Pràctica 2\\BD\\exemple.db");
-          //connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
-          connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
+          connection = DriverManager.getConnection("jdbc:sqlite:/Users/aleixabrieprat/Documents/FIB/7e quadrimestre/ad/lab/p5.db"); //Mac Aleix
+          //connection = DriverManager.getConnection("jdbc:sqlite:/Users/Toni/Desktop/p5.db"); //Mac Toni
           Statement statement = connection.createStatement();
           statement.setQueryTimeout(30);  // set timeout to 30 sec.
           
@@ -59,11 +59,17 @@ public class buscarvuelo extends HttpServlet {
           String origen = request.getParameter("origen");
           String destino = request.getParameter("destino");
           
+          
+          System.out.println("numero:" +numerovuelo );
+          System.out.println("compania:" +compania);
+          System.out.println("origen:" +origen);
+          System.out.println("destino:" +destino);
+          
           ResultSet rs; 
-          if (numerovuelo.equals("")) {
-              if (compania.equals("")) {
-                  if (origen.equals("")) {
-                      if (destino.equals("")) {
+          if (numerovuelo.equals("todo_num")) {
+              if (compania.equals("todo_comp")) {
+                  if (origen.equals("todo_or")) {
+                      if (destino.equals("todo_des")) {
                          rs = statement.executeQuery("Select * from vuelos"); //Buscar todo (parametros todos vacíos)
                       }
                       else {
@@ -71,7 +77,7 @@ public class buscarvuelo extends HttpServlet {
                       } 
                   }
                   else {
-                      if (destino.equals("")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where origen='"+origen+"'"); //Buscar solo por origen
                       }
                       else {
@@ -80,8 +86,8 @@ public class buscarvuelo extends HttpServlet {
                   }
               }
               else {
-                  if (origen.equals("")) {
-                      if (destino.equals("")) {
+                  if (origen.equals("todo_or")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where companyia='"+compania+"'"); //Buscar solo por compañia
                       }
                       else {
@@ -89,7 +95,7 @@ public class buscarvuelo extends HttpServlet {
                       }
                   }
                   else {
-                      if (destino.equals("")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where companyia='"+compania+"' and origen='"+origen+"'"); //Buscar por compañia y origen
                       }
                       else {
@@ -99,9 +105,9 @@ public class buscarvuelo extends HttpServlet {
               }
           }
           else {
-              if (compania.equals("")) {
-                  if (origen.equals("")) {
-                      if (destino.equals("")) {
+              if (compania.equals("todo_comp")) {
+                  if (origen.equals("todo_or")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where id_vuelo='"+numerovuelo+"'"); //Buscar por numero de vuelo
                       }
                       else {
@@ -110,7 +116,7 @@ public class buscarvuelo extends HttpServlet {
                       } 
                   }
                   else {
-                      if (destino.equals("")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where id_vuelo='"+numerovuelo+"' and origen='"+origen+"'"); //Buscar por numero de vuelo y origen
                           
                       }
@@ -121,8 +127,8 @@ public class buscarvuelo extends HttpServlet {
                   }
               }
               else {
-                  if (origen.equals("")) {
-                      if (destino.equals("")) {
+                  if (origen.equals("todo_or")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where id_vuelo='"+numerovuelo+"' and companyia='"+compania+"'"); //Buscar por numero de vuelo y compañia
                           
                       }
@@ -132,7 +138,7 @@ public class buscarvuelo extends HttpServlet {
                       }
                   }
                   else {
-                      if (destino.equals("")) {
+                      if (destino.equals("todo_des")) {
                           rs = statement.executeQuery("Select * from vuelos where id_vuelo='"+numerovuelo+"' and companyia='"+compania+"' and origen='"+origen+"'"); //Buscar por numero de vuelo, compañia y origen
                           
                       }
