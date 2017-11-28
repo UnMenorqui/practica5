@@ -122,87 +122,30 @@ public class GenericResource {
                " <html>" +
                "    <head>" +
                "        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>" +
-               "        <style>"+
-               "            body { "+
-               "                background: url('/Users/aleixabrieprat/Desktop/practica5/P2/web/images/photo_bg.jpg') no-repeat center center fixed;"+
-               "                background-size: cover;" +
-               "                font-size: 16px;"+
-               "                font-family: 'Lato', sans-serif;"+
-               "                font-weight: 300;"+
-               "                margin: 0;"+
-               "                color: #666; "+
-               "            }" +
-               "            ul { "+
-               "                list-style-type: none;\n"
-                + "             margin: 0;\n"
-                + "             padding: 0;\n"
-                + "             overflow: hidden; \n"
-                + "             background-color: #333;\n"
-                + "         }"
-                + "         li { "
-                + "             float: left;"
-                + "         }"
-                + "         li a, .dropbtn { "
-                + "             display: inline-block;"
-                + "             color: white;"
-                + "             text-align: center;"
-                + "             padding: 14px 16px;"
-                + "             text-decoration: none;"
-                + "         }"
-                + "         li a:hover, .dropdown:hover .dropbtn {"
-                + "             background-color: red;"
-                + "         }"
-                + "         li.dropdown { "
-                + "             display:inline-block:"
-                + "         }"
-                + "         .dropdown-content {"
-                + "             display: none"
-                + "             position: absolute"
-                + "             background-color: #f9f9f9;"
-                + "             min-width: 160px;"
-                + "             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);"
-                + "             z-index: 1;"
-                + "         }"
-                + "         .dropdown-content a {"
-                + "             color: black;"
-                + "             padding: 12px 16px;"
-                + "             text-decoration: none;"
-                + "             display: block;"
-                + "             text-align: left;"
-                + "         }"
-                + "         .dropdown-content a:hover {"
-                + "             background-color: #f1f1f1;"
-                + "         }"
-                + "         .dropdown:hover .dropdown-content {"
-                + "             display:block;"
-                + "         }"+
-               "        </style>"+ 
-               "        <title></title> " +
+               " <style>.message {\n" +
+                    "  max-width: 800px;\n" +
+                    "  padding: 15px;\n" +
+                    "  margin: 0 auto;\n" +
+                    "  margin-top:100px;\n" +
+                    "  margin-bottom: 100px;\n" +
+                    "  background: #CDCECD;\n" +
+                    "  border-radius: 28px 28px 28px 28px;\n" +
+                    "  -moz-border-radius: 28px 28px 28px 28px;\n" +
+                    "  -webkit-border-radius: 28px 28px 28px 28px;\n" +
+                    "  border: 1px solid #000000;\n" +
+                    "} #login_box {\n" +
+                    "    position: fixed;\n" +
+                    "    top: 0;\n" +
+                    "    right: 0;\n" +
+                    "    bottom: 0;\n" +
+                    "    left: 0;\n" +
+                    "    background-size: cover;\n" +
+                    "    background-position: 50% 50%;\n" +
+                    "    background-repeat: repeat;\n" +
+                    "}</style>" +
                "    </head>" +
                "    <body> " +
-               "        <ul> " +
-               "            <li><a href=\"menu.jsp\">Home</a></li>" +
-               "            <li class='dropdown'>" +
-               "                <a href='#'>Flights</a>" +
-               "                <div class='dropdown-content'>" +
-               "                    <a href='altavuelo.jsp'>Register Flight</a>" +
-               "                    <a href='buscarvuelo.jsp'>Search Flight</a>" +
-               "                    <a href='consultaplazasvuelo.jsp'>Check free flight seats</a>" +
-               "                    <a href='reservaplazavuelo.jsp'>Book seat in flight</a>" +
-               "                </div> "+
-               "            </li>" +
-               "            <li class='dropdown'>" +
-               "                <a href=\"#\">Hotels</a>" +
-               "                <div class=\"dropdown-content\">" +
-               "                    <a href=\"altahotel.jsp\">Register Hotel</a>" +
-               "                    <a href=\"buscarhotel.jsp\">Search Hotel</a>" +
-               "                    <a href=\"consultahabitaciones.jsp\">Check free rooms</a>" +
-               "                    <a href=\"reservahabitacion.jsp\">Reserve Room</a>" +
-               "                </div>" +
-               "            </li>" +
-               "            <li><a href=\"logout\">Log Out</a></li>\n" +
-               "        </ul>" +
-               "        <div class='message'> <div class='form'>" +
+               "        <div class='login_box'> <div class='message'>" +
                             resultado +
                "    </body>" +
                "</html>";
@@ -280,6 +223,36 @@ public class GenericResource {
         String resultado= "";
         if(hab_ocupadas < 0) resultado= "-1";
         else resultado= "El numero de habiatciones ocupadas despues de la reserva es:"+hab_ocupadas;
-                     return resultado;
+        return " <!DOCTYPE html>" + 
+               " <html>" +
+               "    <head>" +
+               "        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>" +
+               " <style>.message {\n" +
+                    "  max-width: 800px;\n" +
+                    "  padding: 15px;\n" +
+                    "  margin: 0 auto;\n" +
+                    "  margin-top:100px;\n" +
+                    "  margin-bottom: 100px;\n" +
+                    "  background: #CDCECD;\n" +
+                    "  border-radius: 28px 28px 28px 28px;\n" +
+                    "  -moz-border-radius: 28px 28px 28px 28px;\n" +
+                    "  -webkit-border-radius: 28px 28px 28px 28px;\n" +
+                    "  border: 1px solid #000000;\n" +
+                    "} #login_box {\n" +
+                    "    position: fixed;\n" +
+                    "    top: 0;\n" +
+                    "    right: 0;\n" +
+                    "    bottom: 0;\n" +
+                    "    left: 0;\n" +
+                    "    background-size: cover;\n" +
+                    "    background-position: 50% 50%;\n" +
+                    "    background-repeat: repeat;\n" +
+                    "}</style>" +
+               "    </head>" +
+               "    <body> " +
+               "        <div class='login_box'> <div class='message'>" +
+                            resultado +
+               "    </body>" +
+               "</html>";
     }
 }

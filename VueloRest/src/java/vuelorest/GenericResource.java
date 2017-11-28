@@ -116,7 +116,37 @@ public class GenericResource {
         if(plazas_libres < 0) resultado = "ERROR!";
         else if(plazas_libres == 0) resultado = "No hay habitaciones libres!";
         else resultado = "El numero de plazas libres es: " + plazas_libres;
-        return resultado;
+        return " <!DOCTYPE html>" + 
+               " <html>" +
+               "    <head>" +
+               "        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>" +
+               " <style>.message {\n" +
+                    "  max-width: 800px;\n" +
+                    "  padding: 15px;\n" +
+                    "  margin: 0 auto;\n" +
+                    "  margin-top:100px;\n" +
+                    "  margin-bottom: 100px;\n" +
+                    "  background: #CDCECD;\n" +
+                    "  border-radius: 28px 28px 28px 28px;\n" +
+                    "  -moz-border-radius: 28px 28px 28px 28px;\n" +
+                    "  -webkit-border-radius: 28px 28px 28px 28px;\n" +
+                    "  border: 1px solid #000000;\n" +
+                    "} #login_box {\n" +
+                    "    position: fixed;\n" +
+                    "    top: 0;\n" +
+                    "    right: 0;\n" +
+                    "    bottom: 0;\n" +
+                    "    left: 0;\n" +
+                    "    background-size: cover;\n" +
+                    "    background-position: 50% 50%;\n" +
+                    "    background-repeat: repeat;\n" +
+                    "}</style>" +
+               "    </head>" +
+               "    <body> " +
+               "        <div class='login_box'> <div class='message'>" +
+                            resultado +
+               "    </body>" +
+               "</html>";
     }
     
      /**
@@ -191,6 +221,36 @@ public class GenericResource {
         String resultado ="";
         if(plazas_ocupadas < 0) resultado ="-1";
         else resultado ="El numero de plazas ocupadas es:"+ plazas_ocupadas;
-        return resultado;
+        return " <!DOCTYPE html>" + 
+               " <html>" +
+               "    <head>" +
+               "        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>" +
+               " <style>.message {\n" +
+                    "  max-width: 800px;\n" +
+                    "  padding: 15px;\n" +
+                    "  margin: 0 auto;\n" +
+                    "  margin-top:100px;\n" +
+                    "  margin-bottom: 100px;\n" +
+                    "  background: #CDCECD;\n" +
+                    "  border-radius: 28px 28px 28px 28px;\n" +
+                    "  -moz-border-radius: 28px 28px 28px 28px;\n" +
+                    "  -webkit-border-radius: 28px 28px 28px 28px;\n" +
+                    "  border: 1px solid #000000;\n" +
+                    "} #login_box {\n" +
+                    "    position: fixed;\n" +
+                    "    top: 0;\n" +
+                    "    right: 0;\n" +
+                    "    bottom: 0;\n" +
+                    "    left: 0;\n" +
+                    "    background-size: cover;\n" +
+                    "    background-position: 50% 50%;\n" +
+                    "    background-repeat: repeat;\n" +
+                    "}</style>" +
+               "    </head>" +
+               "    <body> " +
+               "        <div class='login_box'> <div class='message'>" +
+                            resultado +
+               "    </body>" +
+               "</html>";
     }
 }
